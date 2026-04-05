@@ -1,0 +1,445 @@
+const translations = {
+  en: {
+    // Nav
+    "nav.services": "Services",
+    "nav.products": "Products",
+    "nav.resources": "Resources",
+    "nav.workflow": "Workflow",
+    "nav.proof": "Proof",
+    "nav.faq": "FAQ",
+    "nav.contact": "Contact",
+    "header.getStarted": "Get Started",
+
+    // Hero
+    "hero.eyebrow": "Prestige — Quality — Fast",
+    "hero.title1": "Scale Your",
+    "hero.title2": "Ads Without",
+    "hero.title3": "Limits",
+    "hero.copy": "Roman Agency Marketing specializes in renting Facebook & TikTok ad accounts. 24/7 support, free replacements, transparent spending reports. You focus on performance — we handle everything else.",
+    "hero.cta1": "Start with $100 Deposit",
+    "hero.cta2": "See How We Work",
+
+    // Problem
+    "problem.eyebrow": "The Problem",
+    "problem.title": "Running Ads Shouldn't Be This Hard",
+    "problem.card1.title": "Account Bans",
+    "problem.card1.text": "Your ad account gets disabled without warning. You lose budget, data, and have to start over from scratch.",
+    "problem.card2.title": "Slow Setup",
+    "problem.card2.text": "Creating new accounts, warming them up, and getting verified takes days. Your campaigns can't wait.",
+    "problem.card3.title": "Lost Budget",
+    "problem.card3.text": "When accounts get banned, your remaining balance is frozen. Money gone, campaigns dead.",
+    "problem.card4.title": "No Support",
+    "problem.card4.text": "Facebook and TikTok support is slow and unhelpful. You're on your own when things break.",
+
+    // Services
+    "services.eyebrow": "Our Services",
+    "services.title": "Ad Account Solutions For Everyone",
+    "services.desc": "Whether you need a ready-to-run ad account or a fully managed campaign, Roman Agency Marketing provides the infrastructure for fast ad growth on Facebook & TikTok.",
+    "services.card1.title": "Ad Account Rental",
+    "services.card1.text": "Rent verified Facebook & TikTok ad accounts ready to run. Clean proxy, strong browser profiles, credit card included. Free replacements if accounts get disabled.",
+    "services.card2.title": "Account & BM Sales",
+    "services.card2.text": "Purchase ad accounts and Business Managers outright. Wide range of account limits to scale your campaigns without restrictions.",
+    "services.card3.title": "Managed Ad Service",
+    "services.card3.text": "We run ads on your behalf. Campaign creation support to increase conversion rate, 24/7 technical support, and easy-to-understand spending reports.",
+
+    // Stats
+    "stats.label1": "Ad Spend Managed",
+    "stats.label2": "Active Accounts",
+    "stats.label3": "Support Available",
+    "stats.label4": "Refund For Unused Budget",
+
+    // Products
+    "products.eyebrow": "Our Products",
+    "products.title": "Facebook Ad Accounts & Resources",
+    "products.desc": "Facebook Ads Account with history spent, high limit ($250–$1500+ unlimited), no-limit resources for scale up. Healthy profiles, pages, and quality pixels.",
+    "products.h1": "High quality BM — sustainable operation",
+    "products.h2": "Technical support & campaign optimization 24/7",
+    "products.h3": "Smart Pixel — limited checkpoint",
+    "products.h4": "All HOT industries: BH, WH, GH",
+    "products.newLabel": "Personal account (new)",
+    "products.oldLabel": "Personal account (old)",
+    "products.note": "All products allow White hat & light Grey hat campaigns. Contact us for custom requirements.",
+
+    // Payment
+    "payment.eyebrow": "Payment Methods",
+    "payment.title": "FLEXIBLE CRYPTO PAYMENTS",
+    "payment.desc": "We accept payments via USDT, BTC, ETH — fast, secure, and hassle-free.",
+
+    // Resources
+    "resources.eyebrow": "What's Included",
+    "resources.title": "We Provide Everything Needed To Run Ads",
+    "resources.list1": "VPS or AdsPower environment with clean proxy",
+    "resources.list2": "Strong browser profiles to keep accounts stable",
+    "resources.list3": "High-quality ad accounts with credit card available",
+    "resources.list4": "Facebook page if needed — you only focus on ad performance",
+    "resources.list5": "FREE replacements (account, profile, page, proxy…)",
+    "resources.calloutLabel": "Support & Policy",
+    "resources.calloutText": "24/7 technical support • Account replacement if disabled • 100% refund for unused budget",
+
+    // Workflow
+    "workflow.eyebrow": "Working Process",
+    "workflow.title": "How It Works",
+    "workflow.desc": "A simple four-step process from ad testing to full campaign launch. We handle the setup — you focus on results.",
+    "workflow.step1.title": "Ad Test",
+    "workflow.step1.text": "We test your ads on our account first to make sure the campaign works properly.",
+    "workflow.step2.title": "Prepare Account",
+    "workflow.step2.text": "If everything is fine, we prepare an ads account and let you check it first.",
+    "workflow.step3.title": "Deposit",
+    "workflow.step3.text": "Make a small deposit ($100+) to start. We create a support group (tech + finance + support).",
+    "workflow.step4.title": "Setup & Launch",
+    "workflow.step4.text": "We add resources to AdsPower, transfer deposit to ad budget, and you start running ads.",
+
+    // Compare / Benefits
+    "compare.eyebrow": "Why Roman Agency",
+    "compare.title": "Benefits Of Cooperation",
+    "compare.desc": "Partner with Roman Agency Marketing and unlock your advertising potential.",
+    "compare.row1.feature": "Breakthrough Growth",
+    "compare.row1.good": "Take advantage of Facebook's reach to bring your business closer to millions of potential customers.",
+    "compare.row2.feature": "Optimize Tools",
+    "compare.row2.good": "Most advanced technology to track, analyze and optimize each campaign easily and effectively.",
+    "compare.row3.feature": "Accompany & Support",
+    "compare.row3.good": "Our team of experts is always ready to advise, from setting up an account to the smartest advertising strategies.",
+    "compare.row4.feature": "Personalized Strategy",
+    "compare.row4.good": "Tailored advertising solutions based on your needs and goals, helping you stand out from the crowd.",
+
+    // Testimonials
+    "testimonials.eyebrow": "Client Results",
+    "testimonials.title": "Trusted By Performance Marketers",
+    "testimonials.desc": "Real results from real partners scaling with Roman infrastructure.",
+    "testimonials.t1.text": '"Scaled from $5K to $80K/month in 3 months with zero downtime. When my account got banned, Roman replaced it in 2 hours. Game changer."',
+    "testimonials.t1.name": "Alex T.",
+    "testimonials.t1.role": "E-commerce, Shopify",
+    "testimonials.t2.text": '"The 24/7 support is real. I had an issue at 3AM and their technician fixed it in 15 minutes. Best agency infrastructure I\'ve used."',
+    "testimonials.t2.name": "Maria S.",
+    "testimonials.t2.role": "Digital Agency Owner",
+    "testimonials.t3.text": '"Transparent spending reports, no hidden fees. I can see exactly where every dollar goes. The 8% fee is worth every penny for the peace of mind."',
+    "testimonials.t3.name": "David K.",
+    "testimonials.t3.role": "Affiliate Marketer",
+
+    // Proof
+    "proof.eyebrow": "2 Global Events",
+    "proof.title": "GLOBAL SOCIAL PROOF",
+    "proof.desc": "Roman Agency Marketing shows up where high-performance operators, affiliates, and ad buyers gather worldwide.",
+
+    // FAQ
+    "faq.eyebrow": "FAQ",
+    "faq.title": "Frequently Asked Questions",
+    "faq.q1": "How is the fee calculated?",
+    "faq.a1": "You want to spend $1000 and your fee is 8%, then the total amount you need to pay is $1,080. We don't charge fees if you haven't worked or spent on the account. You'll be able to check your spending and fees directly using the smart dashboard.",
+    "faq.q2": "Can the balance from a banned account be transferred to a new account?",
+    "faq.a2": "Usually, this depends on the platform's policies and the nature of the ban. However, we can guarantee the remaining balance in the report will be used for the new account.",
+    "faq.q3": "What happens if the Facebook advertising account is banned?",
+    "faq.a3": "In the event an ad account or profile is banned, a replacement account will be provided promptly. The main requirement is to follow the instructions of our technicians to prevent any abuse or damage to the account.",
+    "faq.q4": "How to access my account?",
+    "faq.a4": "We will make your account available through an anti-detection browser after sending an email or through a VPS virtual server (RDP). Our technicians will provide you with all the access information. You can log in and find all the resources in there.",
+
+    // Footer
+    "footer.ctaEyebrow": "Get Started Today",
+    "footer.ctaTitle": "READY TO SCALE?",
+    "footer.ctaDesc": "Rent premium ad accounts, get 24/7 technical support, free replacements, and transparent spending reports. Start with just $100.",
+    "footer.ctaBtn": "Start With $100 Deposit",
+    "footer.ctaNote": "24/7 support available — fast setup for new partners",
+    "footer.brandDesc": "Premium ad account rental for Facebook & TikTok. 24/7 support, free replacements, transparent policy. Prestige — Quality — Fast.",
+    "footer.contactTitle": "Contact Us",
+    "footer.stayTitle": "Stay Updated",
+    "footer.stayDesc": "Get the latest updates and offers directly in your inbox.",
+    "footer.emailLabel": "Email address",
+    "footer.copyright": "Roman Agency Marketing. All rights reserved.",
+  },
+
+  zh: {
+    // Nav
+    "nav.services": "服务",
+    "nav.products": "产品",
+    "nav.resources": "资源",
+    "nav.workflow": "流程",
+    "nav.proof": "案例",
+    "nav.faq": "常见问题",
+    "nav.contact": "联系我们",
+    "header.getStarted": "立即开始",
+
+    // Hero
+    "hero.eyebrow": "信誉 — 品质 — 快速",
+    "hero.title1": "无限",
+    "hero.title2": "扩展您的",
+    "hero.title3": "广告",
+    "hero.copy": "Roman Agency Marketing 专注于出租 Facebook 和 TikTok 广告账户。24/7 全天候支持、免费更换、透明的消费报告。您专注于效果 — 我们处理其他一切。",
+    "hero.cta1": "以 $100 押金开始",
+    "hero.cta2": "了解我们的流程",
+
+    // Problem
+    "problem.eyebrow": "行业痛点",
+    "problem.title": "投放广告不应该这么难",
+    "problem.card1.title": "账户封禁",
+    "problem.card1.text": "您的广告账户在没有警告的情况下被禁用。您将失去预算、数据，不得不从头开始。",
+    "problem.card2.title": "设置缓慢",
+    "problem.card2.text": "创建新账户、预热和验证需要数天。您的广告活动等不起。",
+    "problem.card3.title": "预算损失",
+    "problem.card3.text": "当账户被封禁时，您的余额将被冻结。资金消失，广告停止。",
+    "problem.card4.title": "缺乏支持",
+    "problem.card4.text": "Facebook 和 TikTok 的官方支持缓慢且无用。出问题时您只能自己解决。",
+
+    // Services
+    "services.eyebrow": "我们的服务",
+    "services.title": "适合所有人的广告账户方案",
+    "services.desc": "无论您需要即用型广告账户还是全托管广告服务，Roman Agency Marketing 都能提供在 Facebook 和 TikTok 上快速增长的基础设施。",
+    "services.card1.title": "广告账户租赁",
+    "services.card1.text": "租赁经过验证的 Facebook 和 TikTok 广告账户，开箱即用。包含干净代理、强浏览器配置文件和信用卡。账户被禁用可免费更换。",
+    "services.card2.title": "账户及 BM 销售",
+    "services.card2.text": "直接购买广告账户和 Business Manager。多种账户额度可供选择，助您无限扩展广告规模。",
+    "services.card3.title": "代运营服务",
+    "services.card3.text": "我们代您投放广告。提供创意支持以提高转化率、24/7 技术支持和清晰的消费报告。",
+
+    // Stats
+    "stats.label1": "管理的广告支出",
+    "stats.label2": "活跃账户",
+    "stats.label3": "全天候支持",
+    "stats.label4": "未使用预算全额退款",
+
+    // Products
+    "products.eyebrow": "我们的产品",
+    "products.title": "Facebook 广告账户与资源",
+    "products.desc": "拥有历史消费记录的 Facebook 广告账户，高额度（$250–$1500+ 无限额），无限资源助您扩展规模。健康的主页、页面和优质像素。",
+    "products.h1": "高质量 BM — 可持续运营",
+    "products.h2": "24/7 技术支持与广告优化",
+    "products.h3": "智能 Pixel — 检查点有限",
+    "products.h4": "支持所有热门行业：BH、WH、GH",
+    "products.newLabel": "个人账户（新）",
+    "products.oldLabel": "个人账户（旧）",
+    "products.note": "所有产品支持白帽和轻灰帽广告活动。如有定制需求请联系我们。",
+
+    // Payment
+    "payment.eyebrow": "支付方式",
+    "payment.title": "灵活的加密货币支付",
+    "payment.desc": "我们接受 USDT、BTC、ETH 支付 — 快速、安全、无忧。",
+
+    // Resources
+    "resources.eyebrow": "包含内容",
+    "resources.title": "我们提供投放广告所需的一切",
+    "resources.list1": "VPS 或 AdsPower 环境配备干净代理",
+    "resources.list2": "强大的浏览器配置文件保持账户稳定",
+    "resources.list3": "高质量广告账户，信用卡已绑定",
+    "resources.list4": "如需提供 Facebook 主页 — 您只需专注广告效果",
+    "resources.list5": "免费更换（账户、配置文件、主页、代理…）",
+    "resources.calloutLabel": "支持与政策",
+    "resources.calloutText": "24/7 技术支持 • 账户被禁用免费更换 • 未使用预算 100% 退款",
+
+    // Workflow
+    "workflow.eyebrow": "工作流程",
+    "workflow.title": "如何运作",
+    "workflow.desc": "从广告测试到全面启动的简单四步流程。我们处理设置 — 您专注于成果。",
+    "workflow.step1.title": "广告测试",
+    "workflow.step1.text": "我们先在我们的账户上测试您的广告，确保广告活动运行正常。",
+    "workflow.step2.title": "准备账户",
+    "workflow.step2.text": "如果一切正常，我们会准备广告账户并让您先检查。",
+    "workflow.step3.title": "充值",
+    "workflow.step3.text": "支付少量押金（$100 起）即可开始。我们会创建支持群组（技术+财务+客服）。",
+    "workflow.step4.title": "设置与启动",
+    "workflow.step4.text": "我们将资源添加到 AdsPower，将押金转入广告预算，您即可开始投放广告。",
+
+    // Compare / Benefits
+    "compare.eyebrow": "为什么选择 Roman Agency",
+    "compare.title": "合作优势",
+    "compare.desc": "与 Roman Agency Marketing 合作，释放您的广告潜力。",
+    "compare.row1.feature": "突破性增长",
+    "compare.row1.good": "利用 Facebook 的覆盖面，让您的业务更接近数百万潜在客户。",
+    "compare.row2.feature": "优化工具",
+    "compare.row2.good": "最先进的技术，轻松高效地跟踪、分析和优化每个广告活动。",
+    "compare.row3.feature": "陪伴与支持",
+    "compare.row3.good": "我们的专家团队随时为您提供建议，从账户设置到最智能的广告策略。",
+    "compare.row4.feature": "个性化策略",
+    "compare.row4.good": "根据您的需求和目标量身定制广告解决方案，帮助您脱颖而出。",
+
+    // Testimonials
+    "testimonials.eyebrow": "客户反馈",
+    "testimonials.title": "受到效果营销人员的信赖",
+    "testimonials.desc": "真实合作伙伴通过 Roman 基础设施扩展规模的真实成果。",
+    "testimonials.t1.text": '"3个月内从每月 $5K 扩展到 $80K，零停机。当我的账户被封禁时，Roman 在2小时内就完成了更换。改变了游戏规则。"',
+    "testimonials.t1.name": "Alex T.",
+    "testimonials.t1.role": "电商，Shopify",
+    "testimonials.t2.text": '"24/7 支持是真实的。凌晨3点我遇到问题，他们的技术人员15分钟就解决了。我用过的最好的代理基础设施。"',
+    "testimonials.t2.name": "Maria S.",
+    "testimonials.t2.role": "数字营销公司负责人",
+    "testimonials.t3.text": '"透明的消费报告，没有隐藏费用。我可以清楚地看到每一美元的去向。8% 的费用对于安心来说物超所值。"',
+    "testimonials.t3.name": "David K.",
+    "testimonials.t3.role": "联盟营销人员",
+
+    // Proof
+    "proof.eyebrow": "2 场全球活动",
+    "proof.title": "全球影响力",
+    "proof.desc": "Roman Agency Marketing 出现在全球高效运营商、联盟营销人员和广告买手聚集的地方。",
+
+    // FAQ
+    "faq.eyebrow": "常见问题",
+    "faq.title": "常见问题解答",
+    "faq.q1": "费用如何计算？",
+    "faq.a1": "假设您要花费 $1000，费率为 8%，则您需要支付的总金额为 $1,080。如果您未使用账户，我们不会收取任何费用。您可以通过智能仪表板直接查看消费和费用。",
+    "faq.q2": "被封禁账户的余额可以转移到新账户吗？",
+    "faq.a2": "通常，这取决于平台的政策和封禁的性质。不过，我们可以保证报告中的剩余余额将用于新账户。",
+    "faq.q3": "如果 Facebook 广告账户被封禁怎么办？",
+    "faq.a3": "如果广告账户或配置文件被封禁，我们会立即提供替换账户。主要要求是按照我们技术人员的指示操作，以防止任何滥用或损坏。",
+    "faq.q4": "如何访问我的账户？",
+    "faq.a4": "我们会通过反检测浏览器在发送邮件后或通过 VPS 虚拟服务器 (RDP) 让您访问账户。我们的技术人员会为您提供所有访问信息。您可以登录并找到所有资源。",
+
+    // Footer
+    "footer.ctaEyebrow": "立即开始",
+    "footer.ctaTitle": "准备好扩展了吗？",
+    "footer.ctaDesc": "租赁优质广告账户，获得 24/7 技术支持、免费更换和透明的消费报告。仅需 $100 即可开始。",
+    "footer.ctaBtn": "以 $100 押金开始",
+    "footer.ctaNote": "24/7 全天候支持 — 新合作伙伴快速设置",
+    "footer.brandDesc": "Facebook 和 TikTok 的优质广告账户租赁。24/7 支持、免费更换、透明政策。信誉 — 品质 — 快速。",
+    "footer.contactTitle": "联系我们",
+    "footer.stayTitle": "保持更新",
+    "footer.stayDesc": "直接在您的收件箱中获取最新的更新和优惠。",
+    "footer.emailLabel": "电子邮件地址",
+    "footer.copyright": "Roman Agency Marketing. 版权所有。",
+  },
+
+  ru: {
+    // Nav
+    "nav.services": "Услуги",
+    "nav.products": "Продукты",
+    "nav.resources": "Ресурсы",
+    "nav.workflow": "Процесс",
+    "nav.proof": "Кейсы",
+    "nav.faq": "Вопросы",
+    "nav.contact": "Контакты",
+    "header.getStarted": "Начать",
+
+    // Hero
+    "hero.eyebrow": "Престиж — Качество — Скорость",
+    "hero.title1": "Масштабируйте",
+    "hero.title2": "Рекламу Без",
+    "hero.title3": "Ограничений",
+    "hero.copy": "Roman Agency Marketing специализируется на аренде рекламных аккаунтов Facebook и TikTok. Поддержка 24/7, бесплатная замена, прозрачные отчёты о расходах. Вы фокусируетесь на результатах — мы берём на себя всё остальное.",
+    "hero.cta1": "Начать с депозита $100",
+    "hero.cta2": "Как мы работаем",
+
+    // Problem
+    "problem.eyebrow": "Проблема",
+    "problem.title": "Запуск рекламы не должен быть таким сложным",
+    "problem.card1.title": "Блокировка аккаунтов",
+    "problem.card1.text": "Ваш рекламный аккаунт блокируется без предупреждения. Вы теряете бюджет, данные и начинаете всё заново.",
+    "problem.card2.title": "Долгая настройка",
+    "problem.card2.text": "Создание новых аккаунтов, прогрев и верификация занимают дни. Ваши кампании не могут ждать.",
+    "problem.card3.title": "Потеря бюджета",
+    "problem.card3.text": "Когда аккаунты блокируются, остаток замораживается. Деньги потеряны, кампании остановлены.",
+    "problem.card4.title": "Отсутствие поддержки",
+    "problem.card4.text": "Поддержка Facebook и TikTok медленная и бесполезная. Когда что-то ломается — вы один.",
+
+    // Services
+    "services.eyebrow": "Наши услуги",
+    "services.title": "Решения для рекламных аккаунтов для всех",
+    "services.desc": "Нужен ли вам готовый рекламный аккаунт или полностью управляемая кампания — Roman Agency Marketing предоставляет инфраструктуру для быстрого роста рекламы на Facebook и TikTok.",
+    "services.card1.title": "Аренда аккаунтов",
+    "services.card1.text": "Аренда проверенных рекламных аккаунтов Facebook и TikTok, готовых к запуску. Чистый прокси, надёжные браузерные профили, банковская карта включена. Бесплатная замена при блокировке.",
+    "services.card2.title": "Продажа аккаунтов и BM",
+    "services.card2.text": "Покупка рекламных аккаунтов и Business Manager. Широкий выбор лимитов для масштабирования ваших кампаний без ограничений.",
+    "services.card3.title": "Управление рекламой",
+    "services.card3.text": "Мы запускаем рекламу за вас. Поддержка в создании кампаний для повышения конверсии, техподдержка 24/7 и понятные отчёты о расходах.",
+
+    // Stats
+    "stats.label1": "Управляемые расходы",
+    "stats.label2": "Активных аккаунтов",
+    "stats.label3": "Поддержка доступна",
+    "stats.label4": "Возврат неиспользованного бюджета",
+
+    // Products
+    "products.eyebrow": "Наши продукты",
+    "products.title": "Рекламные аккаунты Facebook и ресурсы",
+    "products.desc": "Рекламные аккаунты Facebook с историей расходов, высоким лимитом ($250–$1500+ без ограничений), безлимитные ресурсы для масштабирования. Здоровые профили, страницы и качественные пиксели.",
+    "products.h1": "Высококачественные BM — стабильная работа",
+    "products.h2": "Техподдержка и оптимизация кампаний 24/7",
+    "products.h3": "Умный Pixel — минимум проверок",
+    "products.h4": "Все HOT-вертикали: BH, WH, GH",
+    "products.newLabel": "Персональный аккаунт (новый)",
+    "products.oldLabel": "Персональный аккаунт (старый)",
+    "products.note": "Все продукты поддерживают White hat и light Grey hat кампании. Свяжитесь с нами для индивидуальных требований.",
+
+    // Payment
+    "payment.eyebrow": "Способы оплаты",
+    "payment.title": "ГИБКАЯ КРИПТО-ОПЛАТА",
+    "payment.desc": "Мы принимаем оплату в USDT, BTC, ETH — быстро, безопасно и без хлопот.",
+
+    // Resources
+    "resources.eyebrow": "Что включено",
+    "resources.title": "Мы предоставляем всё для запуска рекламы",
+    "resources.list1": "VPS или AdsPower с чистым прокси",
+    "resources.list2": "Надёжные браузерные профили для стабильности аккаунтов",
+    "resources.list3": "Качественные рекламные аккаунты с привязанной картой",
+    "resources.list4": "Facebook-страница при необходимости — вы фокусируетесь на рекламе",
+    "resources.list5": "БЕСПЛАТНАЯ замена (аккаунт, профиль, страница, прокси…)",
+    "resources.calloutLabel": "Поддержка и политика",
+    "resources.calloutText": "Техподдержка 24/7 • Замена аккаунта при блокировке • 100% возврат неиспользованного бюджета",
+
+    // Workflow
+    "workflow.eyebrow": "Рабочий процесс",
+    "workflow.title": "Как это работает",
+    "workflow.desc": "Простой четырёхэтапный процесс от тестирования рекламы до полного запуска кампании. Мы настраиваем — вы получаете результат.",
+    "workflow.step1.title": "Тест рекламы",
+    "workflow.step1.text": "Мы сначала тестируем вашу рекламу на нашем аккаунте, чтобы убедиться, что кампания работает правильно.",
+    "workflow.step2.title": "Подготовка аккаунта",
+    "workflow.step2.text": "Если всё в порядке, мы готовим рекламный аккаунт и даём вам его проверить.",
+    "workflow.step3.title": "Депозит",
+    "workflow.step3.text": "Внесите небольшой депозит ($100+). Мы создаём группу поддержки (техника + финансы + поддержка).",
+    "workflow.step4.title": "Настройка и запуск",
+    "workflow.step4.text": "Мы добавляем ресурсы в AdsPower, переводим депозит в бюджет, и вы начинаете запускать рекламу.",
+
+    // Compare / Benefits
+    "compare.eyebrow": "Почему Roman Agency",
+    "compare.title": "Преимущества сотрудничества",
+    "compare.desc": "Сотрудничайте с Roman Agency Marketing и раскройте свой рекламный потенциал.",
+    "compare.row1.feature": "Прорывной рост",
+    "compare.row1.good": "Используйте охват Facebook, чтобы приблизить ваш бизнес к миллионам потенциальных клиентов.",
+    "compare.row2.feature": "Инструменты оптимизации",
+    "compare.row2.good": "Самые передовые технологии для отслеживания, анализа и оптимизации каждой кампании легко и эффективно.",
+    "compare.row3.feature": "Сопровождение и поддержка",
+    "compare.row3.good": "Наша команда экспертов всегда готова помочь — от настройки аккаунта до разработки лучших рекламных стратегий.",
+    "compare.row4.feature": "Персонализированная стратегия",
+    "compare.row4.good": "Индивидуальные рекламные решения на основе ваших потребностей и целей, которые помогут вам выделиться.",
+
+    // Testimonials
+    "testimonials.eyebrow": "Отзывы клиентов",
+    "testimonials.title": "Нам доверяют performance-маркетологи",
+    "testimonials.desc": "Реальные результаты реальных партнёров, масштабирующихся с инфраструктурой Roman.",
+    "testimonials.t1.text": '"За 3 месяца масштабировал с $5K до $80K/месяц без простоев. Когда мой аккаунт заблокировали, Roman заменил его за 2 часа. Настоящий прорыв."',
+    "testimonials.t1.name": "Алекс Т.",
+    "testimonials.t1.role": "E-commerce, Shopify",
+    "testimonials.t2.text": '"Поддержка 24/7 — это реальность. В 3 часа ночи у меня возникла проблема, и их техник решил её за 15 минут. Лучшая инфраструктура."',
+    "testimonials.t2.name": "Мария С.",
+    "testimonials.t2.role": "Владелец digital-агентства",
+    "testimonials.t3.text": '"Прозрачные отчёты, никаких скрытых платежей. Я вижу, куда уходит каждый доллар. 8% комиссии — это стоит каждого цента за спокойствие."',
+    "testimonials.t3.name": "Давид К.",
+    "testimonials.t3.role": "Арбитражник",
+
+    // Proof
+    "proof.eyebrow": "2 мировых мероприятия",
+    "proof.title": "ГЛОБАЛЬНОЕ ПРИСУТСТВИЕ",
+    "proof.desc": "Roman Agency Marketing присутствует там, где собираются performance-операторы, арбитражники и рекламодатели со всего мира.",
+
+    // FAQ
+    "faq.eyebrow": "Вопросы",
+    "faq.title": "Часто задаваемые вопросы",
+    "faq.q1": "Как рассчитывается комиссия?",
+    "faq.a1": "Вы хотите потратить $1000, комиссия 8%, значит общая сумма — $1,080. Мы не взимаем комиссию, если вы не работали и не тратили на аккаунте. Расходы и комиссии можно проверить через умный дашборд.",
+    "faq.q2": "Можно ли перенести баланс заблокированного аккаунта на новый?",
+    "faq.a2": "Обычно это зависит от политики платформы и характера блокировки. Однако мы гарантируем, что остаток по отчёту будет использован для нового аккаунта.",
+    "faq.q3": "Что происходит при блокировке рекламного аккаунта Facebook?",
+    "faq.a3": "Если аккаунт или профиль заблокирован, замена предоставляется оперативно. Главное — следовать инструкциям наших техников, чтобы предотвратить злоупотребления.",
+    "faq.q4": "Как получить доступ к аккаунту?",
+    "faq.a4": "Мы предоставим доступ через антидетект-браузер после отправки email или через VPS (RDP). Наши техники предоставят всю информацию для входа. Вы сможете войти и найти все ресурсы.",
+
+    // Footer
+    "footer.ctaEyebrow": "Начните сегодня",
+    "footer.ctaTitle": "ГОТОВЫ К МАСШТАБИРОВАНИЮ?",
+    "footer.ctaDesc": "Арендуйте премиальные аккаунты, получите техподдержку 24/7, бесплатную замену и прозрачные отчёты. Начните всего с $100.",
+    "footer.ctaBtn": "Начать с депозита $100",
+    "footer.ctaNote": "Поддержка 24/7 — быстрая настройка для новых партнёров",
+    "footer.brandDesc": "Премиальная аренда рекламных аккаунтов для Facebook и TikTok. Поддержка 24/7, бесплатная замена, прозрачная политика. Престиж — Качество — Скорость.",
+    "footer.contactTitle": "Контакты",
+    "footer.stayTitle": "Будьте в курсе",
+    "footer.stayDesc": "Получайте последние обновления и предложения прямо в почту.",
+    "footer.emailLabel": "Электронная почта",
+    "footer.copyright": "Roman Agency Marketing. Все права защищены.",
+  },
+};

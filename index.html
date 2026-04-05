@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roman Marketing Agency — Premium Ad Account Rental for Facebook &amp; TikTok</title>
+    <title>Roman Agency Marketing — Premium Ad Account Rental for Facebook &amp; TikTok</title>
     <meta
       name="description"
-      content="Roman Marketing Agency specializes in renting Facebook &amp; TikTok ad accounts. 24/7 support, free replacements, transparent spending reports. Start with $100 deposit."
+      content="Roman Agency Marketing specializes in renting Facebook &amp; TikTok ad accounts. 24/7 support, free replacements, transparent spending reports. Start with $100 deposit."
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Roman Marketing Agency — Ad Account Rental" />
+    <meta property="og:title" content="Roman Agency Marketing — Ad Account Rental" />
     <meta property="og:description" content="Premium ad account rental for Facebook &amp; TikTok. 24/7 support, free replacements, transparent policy. Start with $100 deposit." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://romanagency.net/" />
@@ -18,12 +18,12 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Roman Marketing Agency — Ad Account Rental" />
+    <meta name="twitter:title" content="Roman Agency Marketing — Ad Account Rental" />
     <meta name="twitter:description" content="Premium ad account rental for Facebook &amp; TikTok. 24/7 support, free replacements, transparent policy." />
     <meta name="twitter:image" content="./assets/hero-bg.png" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%230a0e1a'/><text x='50' y='72' font-size='60' font-weight='bold' text-anchor='middle' fill='%23f2ca50'>R</text></svg>" />
+    <link rel="icon" type="image/png" href="./assets/image-removebg-preview.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,30 +32,50 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="alternate" hreflang="en" href="https://romanagency.net/" />
+    <link rel="alternate" hreflang="zh" href="https://romanagency.net/zh/" />
+    <link rel="alternate" hreflang="ru" href="https://romanagency.net/ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://romanagency.net/" />
   </head>
   <body>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="cursor-glow" id="cursor-glow"></div>
+
     <div class="site-glow site-glow--left"></div>
     <div class="site-glow site-glow--right"></div>
 
     <header class="site-header">
       <div class="shell site-header__inner">
-        <a class="brand" href="#home" aria-label="Roman Marketing Agency home">
-          <span class="brand__mark">R</span>
-          <span class="brand__text">ROMAN</span>
+        <a class="brand" href="#home" aria-label="Roman Agency Marketing home">
+          <img class="brand__logo" src="./assets/Container.png" alt="Roman Agency Marketing" />
         </a>
 
         <nav class="site-nav" id="site-nav" aria-label="Primary">
-          <a href="#services">Services</a>
-          <a href="#resources">Resources</a>
-          <a href="#workflow">Workflow</a>
-          <a href="#proof">Proof</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#products" data-i18n="nav.products">Products</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#resources" data-i18n="nav.resources">Resources</a>
+          <a href="#workflow" data-i18n="nav.workflow">Workflow</a>
+          <a href="#proof" data-i18n="nav.proof">Proof</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
+
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-switcher__btn" type="button" aria-label="Change language">
+            <span id="lang-current">EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="lang-switcher__menu" id="lang-menu">
+            <a href="/" data-lang="en" class="is-active">English</a>
+            <a href="/zh/" data-lang="zh">中文</a>
+            <a href="/ru/" data-lang="ru">Русский</a>
+          </div>
+        </div>
 
         <div class="site-actions">
           <a class="site-actions__link" href="https://t.me/romanwarior" target="_blank" rel="noopener noreferrer">Telegram</a>
-          <a class="button button--small button--solid" href="mailto:romanagency888@gmail.com">Get Started</a>
+          <a class="button button--small button--solid" href="mailto:romanagency888@gmail.com" data-i18n="header.getStarted">Get Started</a>
         </div>
 
         <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
@@ -68,39 +88,53 @@
 
     <main>
       <section class="hero" id="home">
+        <canvas class="hero__canvas" id="hero-particles"></canvas>
         <div class="hero__media"></div>
         <div class="hero__overlay hero__overlay--horizontal"></div>
         <div class="hero__overlay hero__overlay--vertical"></div>
 
         <div class="shell hero__inner">
           <div class="hero__content">
-            <div class="eyebrow">Prestige &mdash; Quality &mdash; Fast</div>
+            <div class="eyebrow" data-i18n="hero.eyebrow">Prestige &mdash; Quality &mdash; Fast</div>
 
             <h1 class="hero__title">
-              <span>Scale Your</span>
-              <span class="hero__title-highlight">Ads Without</span>
-              <span>Limits</span>
+              <span data-i18n="hero.title1">Scale Your</span>
+              <span class="hero__title-highlight" data-i18n="hero.title2">Ads Without</span>
+              <span data-i18n="hero.title3">Limits</span>
             </h1>
 
-            <p class="hero__copy">
-              Roman Marketing Agency specializes in renting Facebook &amp; TikTok ad accounts.
+            <p class="hero__copy" data-i18n="hero.copy">
+              Roman Agency Marketing specializes in renting Facebook &amp; TikTok ad accounts.
               24/7 support, free replacements, transparent spending reports. You focus on performance &mdash; we handle everything else.
             </p>
 
             <div class="hero__actions">
-              <a class="button button--solid" href="mailto:romanagency888@gmail.com">Start with $100 Deposit</a>
-              <a class="button button--ghost" href="#workflow">See How We Work</a>
+              <a class="button button--solid" href="mailto:romanagency888@gmail.com" data-i18n="hero.cta1">Start with $100 Deposit</a>
+              <a class="button button--ghost" href="#workflow" data-i18n="hero.cta2">See How We Work</a>
             </div>
 
             <ul class="hero__meta" aria-label="Platforms we support">
-              <li>Facebook</li>
-              <li>TikTok</li>
-              <li>AdsPower</li>
-              <li>Visa</li>
-              <li>Mastercard</li>
+              <li><span>Facebook</span></li>
+              <li><span>Facebook</span></li>
+              <li><span>TikTok</span></li>
+              <li><span>AdsPower</span></li>
+              <li><span>Visa</span></li>
+              <li><span>Mastercard</span></li>
             </ul>
           </div>
+
+          <div class="hero__visual">
+            <div class="hero-video-card">
+              <video class="hero-video-card__media" autoplay muted loop playsinline preload="metadata">
+                <source src="./assets/hero-video-0402.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
         </div>
+
+        <a class="hero__scroll" href="#services" aria-label="Scroll down">
+          <span class="hero__scroll-line"></span>
+        </a>
       </section>
 
       <section class="marquee" aria-label="Partner platforms">
@@ -108,9 +142,13 @@
         <div class="marquee__fade marquee__fade--right"></div>
         <div class="marquee__track">
           <div class="marquee__group">
-            <div class="marquee__logo">
-              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14c1.4 0 2.8-.2 4.2-.6l.2-.1v-5.5h-3v-4h3v-3c0-3.2 1.9-5 4.8-5 1.4 0 2.8.1 2.8.1v3.1h-1.6c-1.6 0-2 1-2 2v2.4h3.5l-.6 4H25v5.5l.2.1c4-2.3 6.8-6.7 6.8-11.6C32 8.3 25.7 2 16 2z" fill="currentColor"/></svg>
+            <div class="marquee__logo marquee__logo--image">
+              <img src="./assets/meta-logo.png" alt="Meta" />
               <span>Meta</span>
+            </div>
+            <div class="marquee__logo">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="currentColor"/><path d="M21.5 5h-2.8a4.8 4.8 0 0 0-4.8 4.8v3.4h-2.4v4.2h2.4v9.6h4.2v-9.6h3l.4-4.2h-3.4V9.8a.8.8 0 0 1 .8-.8h2.6V5z" fill="var(--bg)"/></svg>
+              <span>Facebook</span>
             </div>
             <div class="marquee__logo">
               <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M22.8 8.4A8.2 8.2 0 0 1 17.4 6V2h-4v18.4a4.2 4.2 0 0 1-4.2 4 4.2 4.2 0 0 1-4.2-4c0-2.1 1.6-3.9 3.7-4.2v-4A8.2 8.2 0 0 0 1 20.4a8.2 8.2 0 0 0 8.2 8.2 8.2 8.2 0 0 0 8.2-8.2V13a12.1 12.1 0 0 0 7.2 2.4V11.4c-1.1 0-2.2-.4-3.1-1a8.4 8.4 0 0 1-1.4-1.2 8.1 8.1 0 0 1 2.7-.8z" fill="currentColor"/></svg>
@@ -128,9 +166,13 @@
               <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="12" cy="16" r="10" fill="rgba(242,202,80,0.35)"/><circle cx="20" cy="16" r="10" fill="rgba(242,202,80,0.25)"/></svg>
               <span>Mastercard</span>
             </div>
-            <div class="marquee__logo">
-              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14c1.4 0 2.8-.2 4.2-.6l.2-.1v-5.5h-3v-4h3v-3c0-3.2 1.9-5 4.8-5 1.4 0 2.8.1 2.8.1v3.1h-1.6c-1.6 0-2 1-2 2v2.4h3.5l-.6 4H25v5.5l.2.1c4-2.3 6.8-6.7 6.8-11.6C32 8.3 25.7 2 16 2z" fill="currentColor"/></svg>
+            <div class="marquee__logo marquee__logo--image">
+              <img src="./assets/meta-logo.png" alt="Meta" />
               <span>Meta</span>
+            </div>
+            <div class="marquee__logo">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="currentColor"/><path d="M21.5 5h-2.8a4.8 4.8 0 0 0-4.8 4.8v3.4h-2.4v4.2h2.4v9.6h4.2v-9.6h3l.4-4.2h-3.4V9.8a.8.8 0 0 1 .8-.8h2.6V5z" fill="var(--bg)"/></svg>
+              <span>Facebook</span>
             </div>
             <div class="marquee__logo">
               <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M22.8 8.4A8.2 8.2 0 0 1 17.4 6V2h-4v18.4a4.2 4.2 0 0 1-4.2 4 4.2 4.2 0 0 1-4.2-4c0-2.1 1.6-3.9 3.7-4.2v-4A8.2 8.2 0 0 0 1 20.4a8.2 8.2 0 0 0 8.2 8.2 8.2 8.2 0 0 0 8.2-8.2V13a12.1 12.1 0 0 0 7.2 2.4V11.4c-1.1 0-2.2-.4-3.1-1a8.4 8.4 0 0 1-1.4-1.2 8.1 8.1 0 0 1 2.7-.8z" fill="currentColor"/></svg>
@@ -150,9 +192,13 @@
             </div>
           </div>
           <div class="marquee__group" aria-hidden="true">
-            <div class="marquee__logo">
-              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14c1.4 0 2.8-.2 4.2-.6l.2-.1v-5.5h-3v-4h3v-3c0-3.2 1.9-5 4.8-5 1.4 0 2.8.1 2.8.1v3.1h-1.6c-1.6 0-2 1-2 2v2.4h3.5l-.6 4H25v5.5l.2.1c4-2.3 6.8-6.7 6.8-11.6C32 8.3 25.7 2 16 2z" fill="currentColor"/></svg>
+            <div class="marquee__logo marquee__logo--image">
+              <img src="./assets/meta-logo.png" alt="Meta" />
               <span>Meta</span>
+            </div>
+            <div class="marquee__logo">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="currentColor"/><path d="M21.5 5h-2.8a4.8 4.8 0 0 0-4.8 4.8v3.4h-2.4v4.2h2.4v9.6h4.2v-9.6h3l.4-4.2h-3.4V9.8a.8.8 0 0 1 .8-.8h2.6V5z" fill="var(--bg)"/></svg>
+              <span>Facebook</span>
             </div>
             <div class="marquee__logo">
               <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M22.8 8.4A8.2 8.2 0 0 1 17.4 6V2h-4v18.4a4.2 4.2 0 0 1-4.2 4 4.2 4.2 0 0 1-4.2-4c0-2.1 1.6-3.9 3.7-4.2v-4A8.2 8.2 0 0 0 1 20.4a8.2 8.2 0 0 0 8.2 8.2 8.2 8.2 0 0 0 8.2-8.2V13a12.1 12.1 0 0 0 7.2 2.4V11.4c-1.1 0-2.2-.4-3.1-1a8.4 8.4 0 0 1-1.4-1.2 8.1 8.1 0 0 1 2.7-.8z" fill="currentColor"/></svg>
@@ -170,9 +216,13 @@
               <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="12" cy="16" r="10" fill="rgba(242,202,80,0.35)"/><circle cx="20" cy="16" r="10" fill="rgba(242,202,80,0.25)"/></svg>
               <span>Mastercard</span>
             </div>
-            <div class="marquee__logo">
-              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14c1.4 0 2.8-.2 4.2-.6l.2-.1v-5.5h-3v-4h3v-3c0-3.2 1.9-5 4.8-5 1.4 0 2.8.1 2.8.1v3.1h-1.6c-1.6 0-2 1-2 2v2.4h3.5l-.6 4H25v5.5l.2.1c4-2.3 6.8-6.7 6.8-11.6C32 8.3 25.7 2 16 2z" fill="currentColor"/></svg>
+            <div class="marquee__logo marquee__logo--image">
+              <img src="./assets/meta-logo.png" alt="Meta" />
               <span>Meta</span>
+            </div>
+            <div class="marquee__logo">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="currentColor"/><path d="M21.5 5h-2.8a4.8 4.8 0 0 0-4.8 4.8v3.4h-2.4v4.2h2.4v9.6h4.2v-9.6h3l.4-4.2h-3.4V9.8a.8.8 0 0 1 .8-.8h2.6V5z" fill="var(--bg)"/></svg>
+              <span>Facebook</span>
             </div>
             <div class="marquee__logo">
               <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M22.8 8.4A8.2 8.2 0 0 1 17.4 6V2h-4v18.4a4.2 4.2 0 0 1-4.2 4 4.2 4.2 0 0 1-4.2-4c0-2.1 1.6-3.9 3.7-4.2v-4A8.2 8.2 0 0 0 1 20.4a8.2 8.2 0 0 0 8.2 8.2 8.2 8.2 0 0 0 8.2-8.2V13a12.1 12.1 0 0 0 7.2 2.4V11.4c-1.1 0-2.2-.4-3.1-1a8.4 8.4 0 0 1-1.4-1.2 8.1 8.1 0 0 1 2.7-.8z" fill="currentColor"/></svg>
@@ -194,14 +244,80 @@
         </div>
       </section>
 
+      <section class="section section--problem" id="problem">
+        <div class="shell problem-layout">
+          <div class="problem-intro">
+            <span class="section-heading__eyebrow" data-i18n="problem.eyebrow">The Problem</span>
+            <h2 data-i18n="problem.title">Running Ads Shouldn't Be This Hard</h2>
+            <p class="problem-intro__copy">
+              Most advertisers don’t fail because of bad offers — they fail because the infrastructure breaks first.
+              Bans, frozen balances, setup delays, and weak support kill momentum before campaigns can scale.
+            </p>
+            <div class="problem-intro__badge">
+              <span class="status-dot"></span>
+              Infrastructure problems destroy profitable campaigns.
+            </div>
+          </div>
+
+          <div class="problem-grid">
+            <article class="problem-card">
+              <div class="problem-card__top">
+                <div class="problem-card__icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2zm0 25c-6.1 0-11-4.9-11-11S9.9 5 16 5s11 4.9 11 11-4.9 11-11 11z" fill="currentColor" opacity=".3"/><path d="M21 11l-10 10M11 11l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <span class="problem-card__tag">High risk</span>
+              </div>
+              <h3 data-i18n="problem.card1.title">Account Bans</h3>
+              <p data-i18n="problem.card1.text">Your ad account gets disabled without warning. You lose budget, data, and have to start over from scratch.</p>
+            </article>
+
+            <article class="problem-card">
+              <div class="problem-card__top">
+                <div class="problem-card__icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2" opacity=".3"/><path d="M16 8v8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <span class="problem-card__tag">Time loss</span>
+              </div>
+              <h3 data-i18n="problem.card2.title">Slow Setup</h3>
+              <p data-i18n="problem.card2.text">Creating new accounts, warming them up, and getting verified takes days. Your campaigns can't wait.</p>
+            </article>
+
+            <article class="problem-card">
+              <div class="problem-card__top">
+                <div class="problem-card__icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2z" stroke="currentColor" stroke-width="2" opacity=".3"/><path d="M12 12h8v2H12zM10 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <span class="problem-card__tag">Budget drain</span>
+              </div>
+              <h3 data-i18n="problem.card3.title">Lost Budget</h3>
+              <p data-i18n="problem.card3.text">When accounts get banned, your remaining balance is frozen. Money gone, campaigns dead.</p>
+            </article>
+
+            <article class="problem-card">
+              <div class="problem-card__top">
+                <div class="problem-card__icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 6h20v16H18l-4 4v-4H6V6z" stroke="currentColor" stroke-width="2" opacity=".3"/><path d="M12 14h8M12 10h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <span class="problem-card__tag">Zero backup</span>
+              </div>
+              <h3 data-i18n="problem.card4.title">No Support</h3>
+              <p data-i18n="problem.card4.text">Facebook and TikTok support is slow and unhelpful. You're on your own when things break.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="shell">
+        </div>
+      </section>
+
       <section class="section" id="services">
         <div class="shell">
           <div class="section-heading section-heading--center">
-            <span class="section-heading__eyebrow">Our Services</span>
-            <h2>Ad Account Solutions For Everyone</h2>
-            <p>
+            <span class="section-heading__eyebrow" data-i18n="services.eyebrow">Our Services</span>
+            <h2 data-i18n="services.title">Ad Account Solutions For Everyone</h2>
+            <p data-i18n="services.desc">
               Whether you need a ready-to-run ad account or a fully managed campaign,
-              Roman Marketing Agency provides the infrastructure for fast ad growth on Facebook &amp; TikTok.
+              Roman Agency Marketing provides the infrastructure for fast ad growth on Facebook &amp; TikTok.
             </p>
           </div>
 
@@ -212,38 +328,38 @@
               </div>
               <div class="service-card__body">
                 <span class="service-card__icon">01</span>
-                <h3>Ad Account Rental</h3>
-                <p>
-                  Rent verified Facebook &amp; TikTok ad accounts ready to run. Clean proxy, strong browser profiles,
-                  credit card included. Free replacements if accounts get disabled.
+                <h3 data-i18n="services.card1.title">Strong Ad Accounts</h3>
+                <p data-i18n="services.card1.text">
+                  Daily spending limit from $250 to $1500+ unlimited. Strong and stable advertising accounts
+                  bringing optimization, quality, and performance to your campaigns. Amount is always stable.
                 </p>
               </div>
             </article>
 
             <article class="service-card service-card--dark">
               <div class="service-card__media">
-                <img src="./assets/service-sales.png" alt="Account and BM Sales illustration" loading="lazy" />
+                <img src="./assets/service-sales.png" alt="Healthy Profiles & Pages illustration" loading="lazy" />
               </div>
               <div class="service-card__body">
                 <span class="service-card__icon">02</span>
-                <h3>Account &amp; BM Sales</h3>
-                <p>
-                  Purchase ad accounts and Business Managers outright. Wide range of account limits to scale
-                  your campaigns without restrictions.
+                <h3 data-i18n="services.card2.title">Profiles, Pages &amp; Pixels</h3>
+                <p data-i18n="services.card2.text">
+                  Healthy profiles and pages with name change support. Quality pixels with stable quantity.
+                  Operating on AdsPower, VPS with clean address proxy for long-term stability.
                 </p>
               </div>
             </article>
 
             <article class="service-card service-card--light">
               <div class="service-card__media">
-                <img src="./assets/service-managed.png" alt="Managed Ad Service illustration" loading="lazy" />
+                <img src="./assets/service-managed.png" alt="Full Support Service illustration" loading="lazy" />
               </div>
               <div class="service-card__body">
                 <span class="service-card__icon">03</span>
-                <h3>Managed Ad Service</h3>
-                <p>
-                  We run ads on your behalf. Campaign creation support to increase conversion rate,
-                  24/7 technical support, and easy-to-understand spending reports.
+                <h3 data-i18n="services.card3.title">Full Support &amp; Refund</h3>
+                <p data-i18n="services.card3.text">
+                  Free cloaked links provided. 100% balance refund after full spending report within 2 hours.
+                  24/7 technical consulting support to keep your campaigns running smoothly.
                 </p>
               </div>
             </article>
@@ -251,29 +367,321 @@
         </div>
       </section>
 
+      <section class="section section--stats" id="stats">
+        <div class="shell">
+          <div class="section-heading section-heading--center stats-heading">
+            <span class="section-heading__eyebrow">Fire By The Numbers</span>
+            <h2>Performance You Can Trust</h2>
+            <p>Real scale, real support, real protection for every campaign you launch.</p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card stat-card--gold">
+              <div class="stat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 7h6a3 3 0 010 6H10a3 3 0 000 6h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="stat-card__value stat-item__number" data-target="20000000" data-prefix="$" data-suffix="+">$0</span>
+              <span class="stat-card__label" data-i18n="stats.label1">Ad Spend Managed</span>
+              <p class="stat-card__desc">Massive volume handled across Facebook and TikTok campaigns.</p>
+            </article>
+
+            <article class="stat-card stat-card--dark">
+              <div class="stat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M7 18v-1a4 4 0 014-4h2a4 4 0 014 4v1M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="stat-card__value stat-item__number" data-target="50000" data-suffix="+">0</span>
+              <span class="stat-card__label" data-i18n="stats.label2">Active Accounts</span>
+              <p class="stat-card__desc">Ready-to-run accounts available for fast campaign deployment.</p>
+            </article>
+
+            <article class="stat-card stat-card--green">
+              <div class="stat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="stat-card__value stat-item__number" data-target="24" data-suffix="/7">0</span>
+              <span class="stat-card__label" data-i18n="stats.label3">Support Available</span>
+              <p class="stat-card__desc">Technical help whenever issues appear — day or night.</p>
+            </article>
+
+            <article class="stat-card stat-card--outline">
+              <div class="stat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="stat-card__value stat-item__number" data-target="100" data-suffix="%">0</span>
+              <span class="stat-card__label" data-i18n="stats.label4">Refund For Unused Budget</span>
+              <p class="stat-card__desc">Clear protection policy so your budget never feels trapped.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--products" id="products">
+        <div class="shell">
+          <div class="section-heading section-heading--center">
+            <span class="section-heading__eyebrow" data-i18n="products.eyebrow">Our Products</span>
+            <h2 data-i18n="products.title">Facebook Ad Accounts &amp; Resources</h2>
+            <p data-i18n="products.desc">
+              Facebook Ads Account with history spent, high limit ($250–$1500+ unlimited),<br/>no-limit resources for scale up. Healthy profiles, pages, and quality pixels.
+            </p>
+          </div>
+
+          <div class="product-highlights">
+            <div class="product-highlight">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span data-i18n="products.h1">High quality BM — sustainable operation</span>
+            </div>
+            <div class="product-highlight">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span data-i18n="products.h2">Technical support &amp; campaign optimization 24/7</span>
+            </div>
+            <div class="product-highlight">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span data-i18n="products.h3">Smart Pixel — limited checkpoint</span>
+            </div>
+            <div class="product-highlight">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span data-i18n="products.h4">All HOT industries: BH, WH, GH</span>
+            </div>
+          </div>
+
+          <div class="product-tabs" role="tablist" aria-label="Product categories">
+            <button class="product-tab is-active" role="tab" aria-selected="true" data-tab="personal">Personal Ads Account</button>
+            <button class="product-tab" role="tab" aria-selected="false" data-tab="bm">Business Manager</button>
+            <button class="product-tab" role="tab" aria-selected="false" data-tab="fanpage">Fanpage</button>
+            <button class="product-tab" role="tab" aria-selected="false" data-tab="profile">Profile</button>
+          </div>
+
+          <div class="product-panel is-active" data-panel="personal">
+            <div class="product-row-label" data-i18n="products.newLabel">Personal account (new)</div>
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Personal account (new)</span>
+                </div>
+                <div class="product-card__limit">Limit $50</div>
+                <p>Never used before, with the ability to change time zone and currency. Can spend up to $50 USD per day. Regular spending can increase the limit.</p>
+              </article>
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Personal account (new)</span>
+                </div>
+                <div class="product-card__limit">Limit $250</div>
+                <p>Never used before, with the ability to change time zone and currency. Can spend up to $250 USD per day. Regular spending can increase the limit.</p>
+              </article>
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Personal account (new)</span>
+                </div>
+                <div class="product-card__limit">Limit $1500</div>
+                <p>Never used before, with the ability to change time zone and currency. Can spend up to $1500 USD per day.</p>
+              </article>
+              <article class="product-card product-card--gold">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Personal account (new)</span>
+                </div>
+                <div class="product-card__limit">No limit</div>
+                <p>Never used before, with the ability to change time zone and currency. Can spend from $5000 USD to unlimited per day.</p>
+              </article>
+            </div>
+
+            <div class="product-row-label" data-i18n="products.oldLabel">Personal account (old)</div>
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Personal account (old)</span>
+                </div>
+                <div class="product-card__limit">Limit $50</div>
+                <p>Used for previous White hat campaigns with many successful payouts, high reliability and good health. Can spend up to $50 USD per day. Regular spending can increase the limit.</p>
+              </article>
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Personal account (old)</span>
+                </div>
+                <div class="product-card__limit">Limit $250</div>
+                <p>Used for previous White hat campaigns with many successful payouts, high reliability and good health. Can spend up to $250 USD per day. Regular spending can increase the limit.</p>
+              </article>
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Personal account (old)</span>
+                </div>
+                <div class="product-card__limit">Limit $1500</div>
+                <p>Used for previous White hat campaigns with many successful payouts, high reliability and good health. Can spend up to $1500 USD per day.</p>
+              </article>
+              <article class="product-card product-card--gold">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Personal account (old)</span>
+                </div>
+                <div class="product-card__limit">No limit</div>
+                <p>Used for previous White hat campaigns with many successful payouts, high reliability and good health. Can spend from $5000 USD to unlimited per day.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="product-panel" data-panel="bm">
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Business Manager</span>
+                </div>
+                <div class="product-card__limit">BM Limit $250</div>
+                <p>Verified Business Manager with $250 daily spending limit. Includes ad account creation capability. Clean history, ready to use.</p>
+              </article>
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Business Manager</span>
+                </div>
+                <div class="product-card__limit">BM Limit $1500</div>
+                <p>Verified Business Manager with $1500 daily spending limit. Premium quality, ideal for scaling campaigns. Includes multiple ad account slots.</p>
+              </article>
+              <article class="product-card product-card--gold">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Business Manager</span>
+                </div>
+                <div class="product-card__limit">BM No Limit</div>
+                <p>Unlimited Business Manager with no daily spending cap. Full verified, maximum ad account slots. Enterprise-level infrastructure for massive scale.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="product-panel" data-panel="fanpage">
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Fanpage</span>
+                </div>
+                <div class="product-card__limit">New Fanpage</div>
+                <p>Brand new Facebook page, ready for ad campaigns. Support name change to match your brand. Clean page with no violations.</p>
+              </article>
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Fanpage</span>
+                </div>
+                <div class="product-card__limit">Aged Fanpage</div>
+                <p>Aged Facebook page with established history. Higher trust score, better ad delivery performance. Ideal for sensitive verticals.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="product-panel" data-panel="profile">
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Profile</span>
+                </div>
+                <div class="product-card__limit">New Profile</div>
+                <p>Fresh Facebook profile with clean history. Suitable for running new ad accounts. Includes 2FA setup and recovery options.</p>
+              </article>
+              <article class="product-card">
+                <div class="product-card__header">
+                  <svg class="product-card__fb" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Profile</span>
+                </div>
+                <div class="product-card__limit">Aged Profile</div>
+                <p>Aged Facebook profile with real activity history. Higher trust level from Facebook algorithm. Better for high-spend campaigns and BM creation.</p>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section section--payment" id="payment">
+        <div class="shell">
+          <div class="section-heading section-heading--center">
+            <span class="section-heading__eyebrow" data-i18n="payment.eyebrow">Payment Methods</span>
+            <h2 data-i18n="payment.title">FLEXIBLE CRYPTO PAYMENTS</h2>
+            <p data-i18n="payment.desc">We accept payments via USDT, BTC, ETH, wallet addresses &mdash; fast, secure, and hassle-free.</p>
+          </div>
+
+          <div class="payment-grid">
+            <article class="payment-card">
+              <div class="payment-card__icon payment-card__icon--usdt">
+                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M10 10h12M16 10v14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M10 17.5c0-1 2.7-2 6-2s6 1 6 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3>USDT</h3>
+              <p>Tether (TRC-20 / ERC-20)</p>
+            </article>
+
+            <article class="payment-card">
+              <div class="payment-card__icon payment-card__icon--btc">
+                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M12 10v12M12 16h5a3 3 0 000-6h-5m0 6h5.5a3 3 0 010 6H12M14 8v2m4-2v2m-4 12v2m4-2v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>BTC</h3>
+              <p>Bitcoin</p>
+            </article>
+
+            <article class="payment-card">
+              <div class="payment-card__icon payment-card__icon--eth">
+                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M16 6l-7 10 7 4 7-4-7-10zM9 16l7 10 7-10-7 4-7-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>ETH</h3>
+              <p>Ethereum</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--pricing" id="pricing">
+        <div class="shell">
+          <div class="section-heading section-heading--center">
+            <span class="section-heading__eyebrow">Service Fees</span>
+            <h2>SPECIAL OFFER FOR FIRST MONTH!</h2>
+            <p>New customers enjoy exclusive first-month pricing. Contact us for detailed fee structure and personalized packages.</p>
+          </div>
+
+          <div class="pricing-highlight">
+            <div class="pricing-badge">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>First Month Special</span>
+            </div>
+            <p>Get started with Roman Agency Marketing at exclusive first-month rates. Contact us via Telegram or email for your personalized pricing plan.</p>
+            <a class="button button--solid" href="mailto:romanagency888@gmail.com">Get Your Special Rate</a>
+          </div>
+        </div>
+      </section>
+
       <section class="section section--tight" id="resources">
         <div class="shell resources">
           <div class="resources__copy">
-            <span class="section-heading__eyebrow">What's Included</span>
-            <h2>We Provide Everything Needed To Run Ads</h2>
+            <span class="section-heading__eyebrow" data-i18n="resources.eyebrow">What's Included</span>
+            <h2 data-i18n="resources.title">We Provide Everything Needed To Run Ads</h2>
             <ul class="feature-list">
-              <li>VPS or AdsPower environment with clean proxy</li>
-              <li>Strong browser profiles to keep accounts stable</li>
-              <li>High-quality ad accounts with credit card available</li>
-              <li>Facebook page if needed &mdash; you only focus on ad performance</li>
-              <li>FREE replacements (account, profile, page, proxy&hellip;)</li>
+              <li data-i18n="resources.list1">Daily spending limit $250 - $1500+ unlimited (always stable)</li>
+              <li data-i18n="resources.list2">Strong, stable accounts with optimization &amp; quality</li>
+              <li data-i18n="resources.list3">Healthy profiles &amp; pages (support name change) + quality pixels</li>
+              <li data-i18n="resources.list4">AdsPower / VPS platforms with clean address proxy for long-term stability</li>
+              <li data-i18n="resources.list5">FREE cloaked links &amp; 100% balance refund within 2 hours</li>
             </ul>
 
             <div class="resources__callout">
-              <span class="resources__label">Support &amp; Policy</span>
-              <strong>24/7 technical support &bull; Account replacement if disabled &bull; 100% refund for unused budget</strong>
+              <span class="resources__label" data-i18n="resources.calloutLabel">Support &amp; Policy</span>
+              <strong data-i18n="resources.calloutText">24/7 technical support &bull; Account replacement if disabled &bull; 100% refund for unused budget</strong>
             </div>
           </div>
 
           <div class="resource-visual">
             <div class="resource-visual__halo"></div>
-            <div class="resource-visual__frame">
-              <img src="./assets/dashboard-mockup.png" alt="Roman Marketing Agency smart dashboard showing ad spend analytics" loading="lazy" />
+            <div class="resource-visual__gallery">
+              <div class="resource-visual__frame">
+                <img src="./assets/SD1.png" alt="Payment history showing $15,513 total spend with $900 threshold — stable Visa payments" loading="lazy" />
+              </div>
+              <div class="resource-visual__frame">
+                <img src="./assets/SD2.png" alt="EUR payment activity showing €14,883 total spend — continuous daily payments" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
@@ -282,10 +690,10 @@
       <section class="section section--workflow" id="workflow">
         <div class="shell">
           <div class="section-heading section-heading--center">
-            <span class="section-heading__eyebrow">Working Process</span>
-            <h2>How It Works</h2>
-            <p>
-              A simple four-step process from ad testing to full campaign launch.
+            <span class="section-heading__eyebrow" data-i18n="workflow.eyebrow">Working Process</span>
+            <h2 data-i18n="workflow.title">How It Works</h2>
+            <p data-i18n="workflow.desc">
+              A simple four-step process from ad testing to full campaign launch.<br/>
               We handle the setup &mdash; you focus on results.
             </p>
           </div>
@@ -293,26 +701,118 @@
           <div class="workflow-grid">
             <article class="workflow-step">
               <span class="workflow-step__count">01</span>
-              <h3>Ad Test</h3>
-              <p>We test your ads on our account first to make sure the campaign works properly.</p>
+              <div class="workflow-step__icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 14h32" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="24" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M18 22h12M18 26h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 data-i18n="workflow.step1.title">Ad Test</h3>
+              <p data-i18n="workflow.step1.text">We test your ads on our account first to make sure the campaign works properly.</p>
             </article>
 
             <article class="workflow-step">
               <span class="workflow-step__count">02</span>
-              <h3>Prepare Account</h3>
-              <p>If everything is fine, we prepare an ads account and let you check it first.</p>
+              <div class="workflow-step__icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="8" y="4" width="24" height="32" rx="3" stroke="currentColor" stroke-width="2"/><path d="M14 12h12M14 18h12M14 24h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="28" cy="30" r="6" fill="currentColor" opacity=".15" stroke="currentColor" stroke-width="1.5"/><path d="M26 30l2 2 3-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 data-i18n="workflow.step2.title">Prepare Account</h3>
+              <p data-i18n="workflow.step2.text">If everything is fine, we prepare an ads account and let you check it first.</p>
             </article>
 
             <article class="workflow-step">
               <span class="workflow-step__count">03</span>
-              <h3>Deposit</h3>
-              <p>Make a small deposit ($100+) to start. We create a support group (tech + finance + support).</p>
+              <div class="workflow-step__icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2"/><path d="M16 18c0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.5-.7 2.7-2 3.5V24h-4v-2.5c-1.3-.8-2-2-2-3.5zM18 27h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 data-i18n="workflow.step3.title">Deposit</h3>
+              <p data-i18n="workflow.step3.text">Make a small deposit ($100+) to start. We create a support group (tech + finance + support).</p>
             </article>
 
             <article class="workflow-step">
               <span class="workflow-step__count">04</span>
-              <h3>Setup &amp; Launch</h3>
-              <p>We add resources to AdsPower, transfer deposit to ad budget, and you start running ads.</p>
+              <div class="workflow-step__icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 32V12l12-8 12 8v20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 32v-8h8v8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="20" cy="18" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <h3 data-i18n="workflow.step4.title">Setup &amp; Launch</h3>
+              <p data-i18n="workflow.step4.text">We add resources to AdsPower, transfer deposit to ad budget, and you start running ads.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--compare" id="compare">
+        <div class="shell">
+          <div class="section-heading section-heading--center">
+            <span class="section-heading__eyebrow" data-i18n="compare.eyebrow">Why Roman Agency</span>
+            <h2 data-i18n="compare.title">Benefits Of Cooperation</h2>
+            <p data-i18n="compare.desc">Partner with Roman Agency Marketing and unlock your advertising potential.</p>
+          </div>
+
+          <div class="benefit-grid">
+            <article class="benefit-card">
+              <div class="benefit-card__icon benefit-card__icon--gold">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 7l6 6-6 6M5 7l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 data-i18n="compare.row1.feature">Breakthrough Growth</h3>
+              <p data-i18n="compare.row1.good">Take advantage of Facebook's reach to bring your business closer to millions of potential customers.</p>
+            </article>
+
+            <article class="benefit-card">
+              <div class="benefit-card__icon benefit-card__icon--cyan">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V10M6 20V4M18 20v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 data-i18n="compare.row2.feature">Optimize Tools</h3>
+              <p data-i18n="compare.row2.good">Most advanced technology to track, analyze and optimize each campaign easily and effectively.</p>
+            </article>
+
+            <article class="benefit-card">
+              <div class="benefit-card__icon benefit-card__icon--gold">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 data-i18n="compare.row3.feature">Accompany &amp; Support</h3>
+              <p data-i18n="compare.row3.good">Our team of experts is always ready to advise, from setting up an account to the smartest advertising strategies.</p>
+            </article>
+
+            <article class="benefit-card">
+              <div class="benefit-card__icon benefit-card__icon--cyan">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <h3 data-i18n="compare.row4.feature">Personalized Strategy</h3>
+              <p data-i18n="compare.row4.good">Tailored advertising solutions based on your needs and goals, helping you stand out from the crowd.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--testimonials" id="testimonials">
+        <div class="shell">
+          <div class="section-heading section-heading--center">
+            <span class="section-heading__eyebrow" data-i18n="testimonials.eyebrow">Client Results</span>
+            <h2 data-i18n="testimonials.title">Trusted By Performance Marketers</h2>
+            <p data-i18n="testimonials.desc">Real results from real partners scaling with Roman Agency infrastructure.</p>
+          </div>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <p class="testimonial-card__text" data-i18n="testimonials.t1.text">"Scaled from $5K to $80K/month in 3 months with zero downtime. When my account got banned, Roman Agency replaced it in 2 hours. Game changer."</p>
+              <div class="testimonial-card__author">
+                <span class="testimonial-card__name" data-i18n="testimonials.t1.name">Alex T.</span>
+                <span class="testimonial-card__role" data-i18n="testimonials.t1.role">E-commerce, Shopify</span>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-card__text" data-i18n="testimonials.t2.text">"The 24/7 support is real. I had an issue at 3AM and their technician fixed it in 15 minutes. Best agency infrastructure I've used."</p>
+              <div class="testimonial-card__author">
+                <span class="testimonial-card__name" data-i18n="testimonials.t2.name">Maria S.</span>
+                <span class="testimonial-card__role" data-i18n="testimonials.t2.role">Digital Agency Owner</span>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-card__text" data-i18n="testimonials.t3.text">"Transparent spending reports, no hidden fees. I can see exactly where every dollar goes. The 8% fee is worth every penny for the peace of mind."</p>
+              <div class="testimonial-card__author">
+                <span class="testimonial-card__name" data-i18n="testimonials.t3.name">David K.</span>
+                <span class="testimonial-card__role" data-i18n="testimonials.t3.role">Affiliate Marketer</span>
+              </div>
             </article>
           </div>
         </div>
@@ -320,12 +820,95 @@
 
       <section class="section section--proof" id="proof">
         <div class="shell">
-          <div class="section-heading">
-            <span class="section-heading__eyebrow">2 Global Events</span>
-            <h2>GLOBAL SOCIAL PROOF</h2>
-            <p>
-              Roman Marketing Agency shows up where high-performance operators, affiliates, and ad buyers gather worldwide.
+          <div class="section-heading section-heading--center">
+            <span class="section-heading__eyebrow" data-i18n="proof.eyebrow">Real Results</span>
+            <h2 data-i18n="proof.title">SPENDING PROOF &amp; INFRASTRUCTURE</h2>
+            <p class="proof-desc" data-i18n="proof.desc">
+              Real screenshots from our ad accounts, campaigns, and verified Business Managers. Numbers don't lie.
             </p>
+          </div>
+
+          <div class="proof-group">
+            <div class="proof-group__head">
+              <h3>Campaign Results</h3>
+              <span></span>
+            </div>
+            <div class="proof-grid proof-grid--3">
+              <figure class="proof-card proof-card--screenshot">
+                <img src="./assets/SD3.png" alt="Ads Manager showing $56,439 total spend across 221 campaigns" loading="lazy" />
+                <figcaption>
+                  <strong>$56,439</strong>
+                  <span>Total spend &middot; 221 campaigns</span>
+                </figcaption>
+              </figure>
+              <figure class="proof-card proof-card--screenshot">
+                <img src="./assets/SD7.png" alt="Ads Manager showing $25,412 spend with $10,000/day budget campaign" loading="lazy" />
+                <figcaption>
+                  <strong>$25,412</strong>
+                  <span>$10K/day budget &middot; 29 campaigns</span>
+                </figcaption>
+              </figure>
+              <figure class="proof-card proof-card--screenshot">
+                <img src="./assets/SD-extra.jpg" alt="Additional campaign spending proof" loading="lazy" />
+                <figcaption>
+                  <strong>High Volume</strong>
+                  <span>Consistent daily ad spend</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="proof-group">
+            <div class="proof-group__head">
+              <h3>Account System &mdash; No Limit</h3>
+              <span></span>
+            </div>
+            <div class="proof-grid proof-grid--2">
+              <figure class="proof-card proof-card--screenshot">
+                <img src="./assets/SD5.png" alt="Ads Check tool showing multiple accounts with $1M+ total spend, no limit" loading="lazy" />
+                <figcaption>
+                  <strong>$1,000,000+</strong>
+                  <span>Per account &middot; No spending limit</span>
+                </figcaption>
+              </figure>
+              <figure class="proof-card proof-card--screenshot">
+                <img src="./assets/SD6.png" alt="Two verified Business Managers with 2500 account creation limit" loading="lazy" />
+                <figcaption>
+                  <strong>BM 2500</strong>
+                  <span>Verified &middot; USA &amp; Algeria</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="proof-group">
+            <div class="proof-group__head">
+              <h3>Verified Business Managers</h3>
+              <span></span>
+            </div>
+            <div class="proof-grid proof-grid--3">
+              <figure class="proof-card proof-card--screenshot">
+                <img src="./assets/BM-3.jpg" alt="1183 AG Properties LLC - Verified BM 2500, USA" loading="lazy" />
+                <figcaption>
+                  <strong>1183 AG Properties</strong>
+                  <span>USA &middot; Verified May 2025</span>
+                </figcaption>
+              </figure>
+              <figure class="proof-card proof-card--screenshot">
+                <img src="./assets/BM-1.jpg" alt="Algerian Fashion Hub AG - Verified BM 2500" loading="lazy" />
+                <figcaption>
+                  <strong>Algerian Fashion Hub</strong>
+                  <span>Algeria &middot; Verified Oct 2024</span>
+                </figcaption>
+              </figure>
+              <figure class="proof-card proof-card--screenshot">
+                <img src="./assets/BM-2.jpg" alt="Soha Consulting - Verified BM 2500, Vietnam" loading="lazy" />
+                <figcaption>
+                  <strong>Soha Consulting</strong>
+                  <span>Vietnam &middot; Verified Mar 2025</span>
+                </figcaption>
+              </figure>
+            </div>
           </div>
 
           <div class="proof-group">
@@ -335,16 +918,16 @@
             </div>
             <div class="proof-grid">
               <figure class="proof-card">
-                <img src="./assets/gallery-large-1.png" alt="Roman team at SiGMA World event" loading="lazy" />
+                <img src="./assets/gallery-large-1.jpg" alt="Roman Agency team at SiGMA World event" loading="lazy" />
               </figure>
               <figure class="proof-card">
-                <img src="./assets/gallery-large-2.png" alt="Tradeshow environment with neon lighting" loading="lazy" />
+                <img src="./assets/gallery-large-2.jpg" alt="Tradeshow environment with neon lighting" loading="lazy" />
               </figure>
               <figure class="proof-card">
-                <img src="./assets/gallery-large-3.png" alt="Crowded event stage and audience" loading="lazy" />
+                <img src="./assets/gallery-large-3.jpg" alt="Crowded event stage and audience" loading="lazy" />
               </figure>
               <figure class="proof-card">
-                <img src="./assets/gallery-large-4.png" alt="Event crowd at conference floor" loading="lazy" />
+                <img src="./assets/gallery-large-4.jpg" alt="Event crowd at conference floor" loading="lazy" />
               </figure>
             </div>
           </div>
@@ -356,16 +939,16 @@
             </div>
             <div class="proof-grid">
               <figure class="proof-card">
-                <img src="./assets/gallery-large-5.png" alt="Roman presentation booth at affiliate event" loading="lazy" />
+                <img src="./assets/gallery-large-5.jpg" alt="Roman Agency presentation booth at affiliate event" loading="lazy" />
               </figure>
               <figure class="proof-card">
-                <img src="./assets/gallery-large-6.png" alt="Roman team on conference floor" loading="lazy" />
+                <img src="./assets/gallery-large-8.jpg" alt="Roman Agency team on conference floor" loading="lazy" />
               </figure>
               <figure class="proof-card">
-                <img src="./assets/gallery-large-7.png" alt="Affiliate World stage and audience area" loading="lazy" />
+                <img src="./assets/gallery-large-7.jpg" alt="Affiliate World stage and audience area" loading="lazy" />
               </figure>
               <figure class="proof-card">
-                <img src="./assets/gallery-large-8.png" alt="Affiliate conference exterior and attendees" loading="lazy" />
+                <img src="./assets/gallery-large-8.jpg" alt="Affiliate conference exterior and attendees" loading="lazy" />
               </figure>
             </div>
           </div>
@@ -375,18 +958,18 @@
       <section class="section section--faq" id="faq">
         <div class="shell shell--narrow">
           <div class="section-heading section-heading--center">
-            <span class="section-heading__eyebrow">FAQ</span>
-            <h2>Frequently Asked Questions</h2>
+            <span class="section-heading__eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+            <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
           </div>
 
           <div class="faq-list">
             <article class="faq-item is-open">
               <button class="faq-item__trigger" type="button" aria-expanded="true">
-                <span>How is the fee calculated?</span>
+                <span data-i18n="faq.q1">How is the fee calculated?</span>
                 <span class="faq-item__icon"></span>
               </button>
               <div class="faq-item__panel">
-                <p>
+                <p data-i18n="faq.a1">
                   You want to spend $1000 and your fee is 8%, then the total amount you need to pay is $1,080.
                   We don't charge fees if you haven't worked or spent on the account. You'll be able to check
                   your spending and fees directly using the smart dashboard.
@@ -396,11 +979,11 @@
 
             <article class="faq-item">
               <button class="faq-item__trigger" type="button" aria-expanded="false">
-                <span>Can the balance from a banned account be transferred to a new account?</span>
+                <span data-i18n="faq.q2">Can the balance from a banned account be transferred to a new account?</span>
                 <span class="faq-item__icon"></span>
               </button>
               <div class="faq-item__panel">
-                <p>
+                <p data-i18n="faq.a2">
                   Usually, this depends on the platform's policies and the nature of the ban.
                   However, we can guarantee the remaining balance in the report will be used for the new account.
                 </p>
@@ -409,11 +992,11 @@
 
             <article class="faq-item">
               <button class="faq-item__trigger" type="button" aria-expanded="false">
-                <span>What happens if the Facebook advertising account is banned?</span>
+                <span data-i18n="faq.q3">What happens if the Facebook advertising account is banned?</span>
                 <span class="faq-item__icon"></span>
               </button>
               <div class="faq-item__panel">
-                <p>
+                <p data-i18n="faq.a3">
                   In the event an ad account or profile is banned, a replacement account will be provided promptly.
                   The main requirement is to follow the instructions of our technicians to prevent any abuse or damage to the account.
                 </p>
@@ -422,11 +1005,11 @@
 
             <article class="faq-item">
               <button class="faq-item__trigger" type="button" aria-expanded="false">
-                <span>How to access my account?</span>
+                <span data-i18n="faq.q4">How to access my account?</span>
                 <span class="faq-item__icon"></span>
               </button>
               <div class="faq-item__panel">
-                <p>
+                <p data-i18n="faq.a4">
                   We will make your account available through an anti-detection browser after sending an email
                   or through a VPS virtual server (RDP). Our technicians will provide you with all the access information.
                   You can log in and find all the resources in there.
@@ -436,23 +1019,57 @@
           </div>
         </div>
       </section>
+
+      <section class="section section--refund" id="refund">
+        <div class="shell shell--narrow">
+          <div class="section-heading section-heading--center">
+            <span class="section-heading__eyebrow">Refund Policy</span>
+            <h2>100% Balance Refund Guarantee</h2>
+          </div>
+          <div class="refund-content">
+            <div class="refund-card">
+              <div class="refund-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p>Customers who use and experience Roman Agency Marketing's services want a refund, the agency guarantees to refund the customer within <strong>100% remaining balance</strong> if no longer cooperating.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--attention" id="attention">
+        <div class="shell shell--narrow">
+          <div class="section-heading section-heading--center">
+            <span class="section-heading__eyebrow">Attention Customers</span>
+            <h2>Stay Safe &amp; Verify</h2>
+          </div>
+          <div class="attention-content">
+            <div class="attention-card">
+              <div class="attention-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <p>We provide reputable and quality services, but to avoid customers being scammed or impersonated, please <strong>contact us via PM BHW</strong> to check safety before using the service.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer" id="contact">
       <div class="shell">
         <div class="footer-cta">
           <div>
-            <span class="section-heading__eyebrow">Get Started Today</span>
-            <h2>READY TO SCALE?</h2>
-            <p>
+            <span class="section-heading__eyebrow" data-i18n="footer.ctaEyebrow">Get Started Today</span>
+            <h2 data-i18n="footer.ctaTitle">READY TO SCALE?</h2>
+            <p data-i18n="footer.ctaDesc">
               Rent premium ad accounts, get 24/7 technical support, free replacements, and
               transparent spending reports. Start with just $100.
             </p>
           </div>
 
           <div class="footer-cta__action">
-            <a class="button button--solid" href="mailto:romanagency888@gmail.com">Start With $100 Deposit</a>
-            <p><span class="status-dot"></span> 24/7 support available &mdash; fast setup for new partners</p>
+            <a class="button button--solid" href="mailto:romanagency888@gmail.com" data-i18n="footer.ctaBtn">Start With $100 Deposit</a>
+            <p class="footer-cta__note" data-i18n="footer.ctaNote"><span class="status-dot"></span> 24/7 support available &mdash; fast setup for new partners</p>
           </div>
         </div>
 
@@ -460,10 +1077,10 @@
 
         <div class="footer-grid">
           <div>
-            <div class="footer-brand">ROMAN MARKETING AGENCY</div>
-            <p class="footer-copy">
+            <div class="footer-brand">ROMAN AGENCY MARKETING</div>
+            <p class="footer-copy" data-i18n="footer.brandDesc">
               Premium ad account rental for Facebook &amp; TikTok. 24/7 support, free replacements,
-              transparent policy. Prestige &mdash; Quality &mdash; Fast.
+              transparent policy.<br/>100% balance refund guaranteed.
             </p>
             <div class="socials" aria-label="Social links">
               <a href="https://t.me/romanwarior" target="_blank" aria-label="Telegram Contact" rel="noopener noreferrer">TG</a>
@@ -475,15 +1092,17 @@
             <h3>Navigation</h3>
             <ul>
               <li><a href="#services">Services</a></li>
+              <li><a href="#pricing">Pricing</a></li>
               <li><a href="#resources">Resources</a></li>
               <li><a href="#workflow">How It Works</a></li>
               <li><a href="#proof">Social Proof</a></li>
+              <li><a href="#refund">Refund Policy</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>
 
           <div>
-            <h3>Contact Us</h3>
+            <h3 data-i18n="footer.contactTitle">Contact Us</h3>
             <ul>
               <li><a href="mailto:romanagency888@gmail.com">romanagency888@gmail.com</a></li>
               <li><a href="https://t.me/romanwarior" target="_blank" rel="noopener noreferrer">Telegram: @romanwarior</a></li>
@@ -493,12 +1112,12 @@
           </div>
 
           <div>
-            <h3>Stay Updated</h3>
-            <p class="footer-copy footer-copy--small">
+            <h3 data-i18n="footer.stayTitle">Stay Updated</h3>
+            <p class="footer-copy footer-copy--small" data-i18n="footer.stayDesc">
               Get the latest updates and offers directly in your inbox.
             </p>
             <form class="newsletter-form" id="newsletter-form">
-              <label class="sr-only" for="email">Email address</label>
+              <label class="sr-only" for="email" data-i18n="footer.emailLabel">Email address</label>
               <input id="email" name="email" type="email" placeholder="Your email" />
               <button type="submit" aria-label="Submit email">Go</button>
             </form>
@@ -506,10 +1125,21 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; <span id="year"><noscript>2026</noscript></span> Roman Marketing Agency. All rights reserved.</p>
+          <p>&copy; <span id="year"><noscript>2026</noscript></span> <span data-i18n="footer.copyright">Roman Agency Marketing. All rights reserved.</span></p>
         </div>
       </div>
     </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-group" id="fab-group">
+      <a class="fab fab--contact" href="https://t.me/romanwarior" target="_blank" rel="noopener noreferrer" aria-label="Contact us on Telegram">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 5L2 12.5l7 1.5M21 5l-4 15-7-8.5M21 5L9 14m0 0v5.5l3.5-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="fab__label">Chat Now</span>
+      </a>
+      <button class="fab fab--top" id="fab-top" type="button" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
 
     <script src="./script.js" defer></script>
   </body>
