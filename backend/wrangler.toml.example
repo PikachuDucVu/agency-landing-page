@@ -1,0 +1,29 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "roman-agency-api"
+main = "src/index.ts"
+compatibility_date = "2026-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ── Static Assets (Admin Panel) ──
+[assets]
+directory = "./admin"
+
+# ── Cloudflare D1 Database ──
+# Tạo database mới: wrangler d1 create roman-agency-db
+# Rồi paste database_id vào đây
+[[d1_databases]]
+binding = "DB"
+database_name = "roman-agency-db"
+database_id = "YOUR_DATABASE_ID_HERE"
+
+# ── Cloudflare R2 Storage ──
+# Tạo bucket: wrangler r2 bucket create roman-agency-media
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "roman-agency-media"
+
+# ── Environment Variables ──
+[vars]
+ADMIN_USERNAME = "admin"
+JWT_SECRET = "change-this-to-your-own-secret"
+CORS_ORIGINS = "http://localhost:3000,http://localhost:5500,http://127.0.0.1:5500,http://localhost:8787,http://127.0.0.1:8787"

@@ -1,0 +1,24 @@
+{
+  "name": "roman-agency-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 execute roman-agency-db --local --file=./migrations/0001_initial.sql",
+    "db:seed": "wrangler d1 execute roman-agency-db --local --file=./migrations/0002_seed.sql",
+    "db:migrate:remote": "wrangler d1 execute roman-agency-db --remote --file=./migrations/0001_initial.sql",
+    "db:seed:remote": "wrangler d1 execute roman-agency-db --remote --file=./migrations/0002_seed.sql",
+    "seed:media": "npx tsx scripts/seed-media-local.ts",
+    "migrate:assets": "node ./scripts/migrate-assets.ts"
+  },
+  "dependencies": {
+    "hono": "^4.7.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250327.0",
+    "wrangler": "^4.10.0",
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roman Agency — Admin Login</title>
+  <link rel="icon" type="image/png" href="./public/image-removebg-preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./admin.css" />
+</head>
+<body class="login-page">
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-brand">
+        <img class="login-brand__logo-img" src="./public/Container.png" alt="Roman Agency" />
+        <div>
+          <div class="login-brand__name">ROMAN AGENCY</div>
+          <div class="login-brand__sub">Admin Console</div>
+        </div>
+      </div>
+
+      <form id="login-form" class="login-form" autocomplete="off">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="admin" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" autocomplete="current-password" required />
+        </div>
+        <div id="login-error" class="login-error" hidden></div>
+        <button id="login-btn" type="submit" class="btn btn--primary btn--full">
+          <span id="login-btn-text">Sign In</span>
+          <span id="login-btn-spinner" class="spinner" hidden></span>
+        </button>
+      </form>
+
+      <p class="login-note">Roman Agency Marketing © <span id="yr"></span></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const API = window.location.origin;
+
+    // Redirect if already logged in
+    if (localStorage.getItem('ra_token')) {
+      window.location.href = './index.html';
+    }
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const btn = document.getElementById('login-btn');
+      const btnText = document.getElementById('login-btn-text');
+      const spinner = document.getElementById('login-btn-spinner');
+      const errorEl = document.getElementById('login-error');
+
+      btn.disabled = true;
+      btnText.textContent = 'Signing in…';
+      spinner.hidden = false;
+      errorEl.hidden = true;
+
+      try {
+        const res = await fetch(`${API}/api/auth/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          localStorage.setItem('ra_token', data.data.token);
+          localStorage.setItem('ra_username', data.data.username);
+          window.location.href = './index.html';
+        } else {
+          errorEl.textContent = data.error?.message || 'Login failed';
+          errorEl.hidden = false;
+        }
+      } catch {
+        errorEl.textContent = 'Cannot connect to server. Is the backend running?';
+        errorEl.hidden = false;
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = 'Sign In';
+        spinner.hidden = true;
+      }
+    });
+  </script>
+</body>
+</html>

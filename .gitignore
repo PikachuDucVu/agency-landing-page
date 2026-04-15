@@ -3,3 +3,6 @@ dist/
 .claude/
 ffmpeg2pass-0.log
 ffmpeg2pass-0.log.mbtree
+admin/.dev.vars
+admin/.wrangler/
+admin/node_modules/
